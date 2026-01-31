@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teka-Teki Cerita - Ubay dan Lala: Sahabat Surga</title>
+    <link rel="stylesheet" href="../css/games.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Debug Test Div -->
+        <div id="quiz-app" style="background: yellow; padding: 10px; margin: 10px; border: 2px solid red;">
+            <h3>DEBUG: Quiz App Container</h3>
+            <p>If you see this, the HTML is loading correctly.</p>
+        </div>
+        
+        <!-- Game Header -->
+        <header class="game-header">
+            <button class="back-button" onclick="window.location.href='index.html'">
+                ← Kembali
+            </button>
+            <h1>Teka-Teki Cerita</h1>
+            <div class="progress-indicator">
+                <span id="currentQuestion">1</span> / <span id="totalQuestions">5</span>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-main">
+            <!-- Question Card -->
+            <div class="question-card">
+                <!-- Question Image -->
+                <div class="question-image">
+                    <img id="questionImage" src="" alt="Gambar pertanyaan">
+                </div>
+
+                <!-- Question Text -->
+                <div class="question-text">
+                    <h2 id="questionText">Memuat pertanyaan...</h2>
+                </div>
+
+                <!-- Answer Options -->
+                <div class="answer-options" id="answerOptions">
+                    <!-- Options will be dynamically generated -->
+                </div>
+
+                <!-- Feedback Area -->
+                <div class="feedback-area" id="feedbackArea">
+                    <!-- Feedback will be shown here -->
+                </div>
+            </div>
+
+            <!-- Score Display -->
+            <div class="score-display">
+                <div class="stars">
+                    <span class="star" id="star1">⭐</span>
+                    <span class="star" id="star2">⭐</span>
+                    <span class="star" id="star3">⭐</span>
+                    <span class="star" id="star4">⭐</span>
+                    <span class="star" id="star5">⭐</span>
+                </div>
+                <p>Skor: <span id="score">0</span></p>
+            </div>
+        </main>
+
+        <!-- Completion Modal -->
+        <div class="completion-modal" id="completionModal">
+            <div class="modal-content">
+                <div class="celebration">
+                    <div class="celebration-icon">🎉</div>
+                    <h2>Kuis Selesai!</h2>
+                    <p class="final-score">Skor Akhir: <span id="finalScore">0</span> / <span id="maxScore">5</span></p>
+                    <div class="reward-info">
+                        <p id="rewardMessage">Kartu telah dibuka!</p>
+                    </div>
+                </div>
+                <button class="continue-button" onclick="backToMenu()">
+                    Kembali ke Menu Game
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-content">
+                <div class="loading-spinner">🎮</div>
+                <p>Memuat kuis...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/progress.js"></script>
+    <script src="../js/cards.js"></script>
+    <script src="../js/story-quiz.js"></script>
+</body>
+</html>

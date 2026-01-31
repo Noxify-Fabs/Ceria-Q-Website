@@ -1,0 +1,9 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <rect width="80" height="80" fill="#87CEEB" rx="15"/>
+    <rect x="20" y="30" width="40" height="35" fill="#654321" rx="3"/>
+    <rect x="25" y="35" width="30" height="25" fill="#8B4513" rx="2"/>
+    <rect x="30" y="40" width="20" height="15" fill="#D2691E" rx="2"/>
+    <circle cx="40" cy="47" r="6" fill="#FFD700"/>
+    <text x="40" y="50" text-anchor="middle" fill="#8B4513" font-size="8" font-weight="bold">ALLAH</text>
+    <polygon points="20,30 40,15 60,30" fill="#8B4513"/>
+</svg>

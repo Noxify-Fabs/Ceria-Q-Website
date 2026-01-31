@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Gambar - Ubay dan Lala: Sahabat Surga</title>
+    <link rel="stylesheet" href="../css/games.css">
+    <style>
+        /* Puzzle Game Specific Styles */
+        .puzzle-game-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Difficulty Selection Screen */
+        .difficulty-screen {
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .difficulty-title {
+            font-size: 2.5em;
+            color: #4A90A4;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .difficulty-subtitle {
+            font-size: 1.3em;
+            color: #2C3E50;
+            margin-bottom: 40px;
+        }
+
+        .difficulty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .difficulty-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 240, 0.95) 100%);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(135, 206, 235, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .difficulty-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(135, 206, 235, 0.3);
+        }
+
+        .difficulty-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .difficulty-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .difficulty-size {
+            font-size: 1.1em;
+            color: #4A90A4;
+            margin-bottom: 5px;
+        }
+
+        .difficulty-description {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Puzzle Game Screen */
+        .puzzle-screen {
+            display: none;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .puzzle-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .puzzle-info {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 240, 0.95) 100%);
+            padding: 15px 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(135, 206, 235, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .puzzle-info span {
+            font-weight: bold;
+            color: #4A90A4;
+        }
+
+        .puzzle-controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .control-button {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FFA07A 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .control-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
+        }
+
+        .puzzle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .puzzle-grid {
+            display: grid;
+            gap: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 3px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(135, 206, 235, 0.2);
+            position: relative;
+        }
+
+        .puzzle-piece {
+            width: 100px;
+            height: 100px;
+            background-size: 300% 300%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .puzzle-piece:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .puzzle-piece.empty {
+            background: rgba(135, 206, 235, 0.2);
+            cursor: default;
+        }
+
+        .puzzle-piece.empty:hover {
+            transform: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .puzzle-piece.correct {
+            animation: correctPiece 0.5s ease;
+        }
+
+        @keyframes correctPiece {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Preview Image */
+        .preview-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(135, 206, 235, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .preview-label {
+            font-size: 0.9em;
+            color: #4A90A4;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Completion Screen */
+        .completion-screen {
+            display: none;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .completion-title {
+            font-size: 2.5em;
+            color: #1A5F3F;
+            margin-bottom: 20px;
+        }
+
+        .completion-stats {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 240, 0.95) 100%);
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(135, 206, 235, 0.2);
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .stat-item {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #2C3E50;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: #4A90A4;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .puzzle-game-container {
+                padding: 15px;
+            }
+            
+            .difficulty-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .puzzle-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .puzzle-piece {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .preview-image {
+                max-width: 150px;
+                max-height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .puzzle-piece {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .difficulty-title {
+                font-size: 2em;
+            }
+            
+            .preview-image {
+                max-width: 120px;
+                max-height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="puzzle-game-container">
+        <!-- Game Header -->
+        <header class="game-header">
+            <button class="back-button" onclick="backToMenu()">
+                ← Kembali
+            </button>
+            <h1>Puzzle Gambar</h1>
+            <div class="progress-indicator" id="progressIndicator">
+                🧩 Menu
+            </div>
+        </header>
+
+        <!-- Difficulty Selection Screen -->
+        <div class="difficulty-screen" id="difficultyScreen">
+            <h2 class="difficulty-title">🧩 Pilih Tingkat Kesulitan</h2>
+            <p class="difficulty-subtitle">Susun potongan gambar menjadi utuh!</p>
+            
+            <div class="difficulty-grid">
+                <div class="difficulty-card" onclick="startPuzzle('mudah')">
+                    <div class="difficulty-icon">😊</div>
+                    <div class="difficulty-name">MUDAH</div>
+                    <div class="difficulty-size">3 × 3</div>
+                    <div class="difficulty-description">Cocok untuk pemula</div>
+                </div>
+                
+                <div class="difficulty-card" onclick="startPuzzle('sedang')">
+                    <div class="difficulty-icon">🤔</div>
+                    <div class="difficulty-name">SEDANG</div>
+                    <div class="difficulty-size">4 × 4</div>
+                    <div class="difficulty-description">Tantangan yang menarik</div>
+                </div>
+                
+                <div class="difficulty-card" onclick="startPuzzle('sulit')">
+                    <div class="difficulty-icon">🎯</div>
+                    <div class="difficulty-name">SULIT</div>
+                    <div class="difficulty-size">6 × 6</div>
+                    <div class="difficulty-description">Untuk ahli puzzle!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puzzle Game Screen -->
+        <div class="puzzle-screen" id="puzzleScreen">
+            <div class="puzzle-header">
+                <div class="puzzle-info">
+                    <div>Level: <span id="currentLevel">MUDAH</span></div>
+                    <div>Langkah: <span id="moveCount">0</span></div>
+                    <div>Waktu: <span id="timer">00:00</span></div>
+                </div>
+                
+                <div class="puzzle-controls">
+                    <button class="control-button" onclick="shufflePuzzle()">🔀 Acak</button>
+                    <button class="control-button" onclick="showHint()">💡 Petunjuk</button>
+                    <button class="control-button" onclick="backToDifficulty()">← Menu</button>
+                </div>
+            </div>
+
+            <div class="preview-container">
+                <img id="previewImage" class="preview-image" alt="Preview">
+                <div class="preview-label">Gambar Utuh</div>
+            </div>
+
+            <div class="puzzle-container">
+                <div id="puzzleGrid" class="puzzle-grid"></div>
+            </div>
+        </div>
+
+        <!-- Completion Screen -->
+        <div class="completion-screen" id="completionScreen">
+            <h2 class="completion-title">🎉 Puzzle Selesai!</h2>
+            
+            <div class="completion-stats">
+                <div class="stat-item">
+                    Level: <span class="stat-value" id="completedLevel">MUDAH</span>
+                </div>
+                <div class="stat-item">
+                    Total Langkah: <span class="stat-value" id="finalMoves">0</span>
+                </div>
+                <div class="stat-item">
+                    Waktu: <span class="stat-value" id="finalTime">00:00</span>
+                </div>
+                <div class="stat-item">
+                    Kartu Dibuka: <span class="stat-value" id="unlockedCards">-</span>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <button class="control-button" onclick="playAgain()">🔄 Main Lagi</button>
+                <button class="control-button" onclick="backToDifficulty()">📋 Menu Level</button>
+                <button class="control-button" onclick="backToMenu()">🏠 Menu Utama</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/progress.js"></script>
+    <script src="../js/cards.js"></script>
+    <script src="../js/puzzle-game.js"></script>
+</body>
+</html>

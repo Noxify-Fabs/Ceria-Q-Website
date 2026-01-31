@@ -1,0 +1,161 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - Garden scene -->
+  <defs>
+    <linearGradient id="gardenSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8F4FD;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gardenGround" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7FD8BE;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="flowerCenter">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="400" height="250" fill="url(#gardenSky)"/>
+  
+  <!-- Ground -->
+  <rect y="250" width="400" height="150" fill="url(#gardenGround)"/>
+  
+  <!-- Sun with rays -->
+  <circle cx="350" cy="60" r="35" fill="#FFD700" opacity="0.9"/>
+  <g transform="translate(350, 60)">
+    <path d="M0,-50 L5,-40 L0,-45 L-5,-40 Z" fill="#FFD700" opacity="0.7"/>
+    <path d="M0,-50 L5,-40 L0,-45 L-5,-40 Z" fill="#FFD700" opacity="0.7" transform="rotate(45)"/>
+    <path d="M0,-50 L5,-40 L0,-45 L-5,-40 Z" fill="#FFD700" opacity="0.7" transform="rotate(90)"/>
+    <path d="M0,-50 L5,-40 L0,-45 L-5,-40 Z" fill="#FFD700" opacity="0.7" transform="rotate(135)"/>
+    <path d="M0,-50 L5,-40 L0,-45 L-5,-40 Z" fill="#FFD700" opacity="0.7" transform="rotate(180)"/>
+    <path d="M0,-50 L5,-40 L0,-45 L-5,-40 Z" fill="#FFD700" opacity="0.7" transform="rotate(225)"/>
+    <path d="M0,-50 L5,-40 L0,-45 L-5,-40 Z" fill="#FFD700" opacity="0.7" transform="rotate(270)"/>
+    <path d="M0,-50 L5,-40 L0,-45 L-5,-40 Z" fill="#FFD700" opacity="0.7" transform="rotate(315)"/>
+  </g>
+  
+  <!-- Garden fence -->
+  <rect x="20" y="240" width="360" height="60" fill="#8B4513" opacity="0.8"/>
+  <rect x="20" y="240" width="360" height="5" fill="#654321"/>
+  <rect x="50" y="230" width="8" height="70" fill="#654321"/>
+  <rect x="100" y="230" width="8" height="70" fill="#654321"/>
+  <rect x="150" y="230" width="8" height="70" fill="#654321"/>
+  <rect x="200" y="230" width="8" height="70" fill="#654321"/>
+  <rect x="250" y="230" width="8" height="70" fill="#654321"/>
+  <rect x="300" y="230" width="8" height="70" fill="#654321"/>
+  <rect x="350" y="230" width="8" height="70" fill="#654321"/>
+  
+  <!-- Large flower garden -->
+  <g id="flower1">
+    <rect x="80" y="280" width="4" height="40" fill="#228B22"/>
+    <circle cx="82" cy="270" r="12" fill="#FFB6C1"/>
+    <circle cx="82" cy="270" r="5" fill="url(#flowerCenter)"/>
+  </g>
+  
+  <g id="flower2">
+    <rect x="120" y="290" width="4" height="30" fill="#228B22"/>
+    <circle cx="122" cy="280" r="10" fill="#FFA07A"/>
+    <circle cx="122" cy="280" r="4" fill="url(#flowerCenter)"/>
+  </g>
+  
+  <g id="flower3">
+    <rect x="160" y="285" width="4" height="35" fill="#228B22"/>
+    <circle cx="162" cy="275" r="11" fill="#FFB6C1"/>
+    <circle cx="162" cy="275" r="4.5" fill="url(#flowerCenter)"/>
+  </g>
+  
+  <g id="flower4">
+    <rect x="200" y="295" width="4" height="25" fill="#228B22"/>
+    <circle cx="202" cy="285" r="9" fill="#FFA07A"/>
+    <circle cx="202" cy="285" r="3.5" fill="url(#flowerCenter)"/>
+  </g>
+  
+  <g id="flower5">
+    <rect x="240" y="280" width="4" height="40" fill="#228B22"/>
+    <circle cx="242" cy="270" r="12" fill="#FFB6C1"/>
+    <circle cx="242" cy="270" r="5" fill="url(#flowerCenter)"/>
+  </g>
+  
+  <g id="flower6">
+    <rect x="280" y="290" width="4" height="30" fill="#228B22"/>
+    <circle cx="282" cy="280" r="10" fill="#FFA07A"/>
+    <circle cx="282" cy="280" r="4" fill="url(#flowerCenter)"/>
+  </g>
+  
+  <g id="flower7">
+    <rect x="320" y="285" width="4" height="35" fill="#228B22"/>
+    <circle cx="322" cy="275" r="11" fill="#FFB6C1"/>
+    <circle cx="322" cy="275" r="4.5" fill="url(#flowerCenter)"/>
+  </g>
+  
+  <!-- Ubay watering plants -->
+  <g id="ubay-watering">
+    <!-- Body -->
+    <ellipse cx="150" cy="260" rx="22" ry="30" fill="#4169E1"/>
+    <!-- Head -->
+    <circle cx="150" cy="220" r="18" fill="#FDBCB4"/>
+    <!-- Hair -->
+    <path d="M132 212 Q150 205 168 212 Q163 208 150 206 Q137 208 132 212" fill="#8B4513"/>
+    <!-- Eyes -->
+    <circle cx="143" cy="218" r="2" fill="black"/>
+    <circle cx="157" cy="218" r="2" fill="black"/>
+    <!-- Smile -->
+    <path d="M143 224 Q150 228 157 224" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Watering can -->
+    <ellipse cx="175" cy="250" rx="15" ry="10" fill="#C0C0C0" transform="rotate(30 175 250)"/>
+    <rect x="185" y="245" width="12" height="3" fill="#C0C0C0" transform="rotate(30 191 246)"/>
+    <!-- Water drops -->
+    <circle cx="195" cy="265" r="2" fill="#87CEEB" opacity="0.7"/>
+    <circle cx="200" cy="275" r="2" fill="#87CEEB" opacity="0.7"/>
+    <circle cx="205" cy="285" r="2" fill="#87CEEB" opacity="0.7"/>
+    <!-- Arms -->
+    <rect x="128" y="245" width="7" height="20" fill="#FDBCB4" rx="3.5" transform="rotate(-25 131.5 255)"/>
+    <rect x="165" y="245" width="7" height="20" fill="#FDBCB4" rx="3.5" transform="rotate(45 168.5 255)"/>
+    <!-- Legs -->
+    <rect x="142" y="285" width="7" height="18" fill="#4169E1" rx="3.5"/>
+    <rect x="151" y="285" width="7" height="18" fill="#4169E1" rx="3.5"/>
+  </g>
+  
+  <!-- Lala smelling flower -->
+  <g id="lala-smelling">
+    <!-- Body -->
+    <ellipse cx="250" cy="260" rx="22" ry="30" fill="#FFB6C1"/>
+    <!-- Head -->
+    <circle cx="250" cy="220" r="18" fill="#FDBCB4"/>
+    <!-- Hair with bow -->
+    <path d="M232 212 Q250 205 268 212 Q268 225 263 230 L237 230 Q232 225 232 212" fill="#8B4513"/>
+    <circle cx="245" cy="208" r="3.5" fill="#FF69B4"/>
+    <circle cx="255" cy="208" r="3.5" fill="#FF69B4"/>
+    <!-- Eyes closed (smelling) -->
+    <path d="M243 218 Q245 216 247 218" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M253 218 Q255 216 257 218" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Happy smile -->
+    <path d="M243 224 Q250 229 257 224" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Arms smelling flower -->
+    <rect x="228" y="245" width="7" height="20" fill="#FDBCB4" rx="3.5" transform="rotate(-15 231.5 255)"/>
+    <rect x="265" y="245" width="7" height="20" fill="#FDBCB4" rx="3.5" transform="rotate(15 268.5 255)"/>
+    <!-- Legs -->
+    <rect x="242" y="285" width="7" height="18" fill="#FFB6C1" rx="3.5"/>
+    <rect x="251" y="285" width="7" height="18" fill="#FFB6C1" rx="3.5"/>
+  </g>
+  
+  <!-- Birds in sky -->
+  <g id="bird1">
+    <path d="M50 80 Q55 75 60 80" stroke="#4169E1" stroke-width="2" fill="none"/>
+    <path d="M60 80 Q65 75 70 80" stroke="#4169E1" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g id="bird2">
+    <path d="M100 60 Q105 55 110 60" stroke="#4169E1" stroke-width="2" fill="none"/>
+    <path d="M110 60 Q115 55 120 60" stroke="#4169E1" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Butterfly -->
+  <g id="butterfly-garden">
+    <ellipse cx="320" cy="150" rx="10" ry="18" fill="#FFB6C1" transform="rotate(25 320 150)" opacity="0.8"/>
+    <ellipse cx="320" cy="150" rx="10" ry="18" fill="#FFB6C1" transform="rotate(-25 320 150)" opacity="0.8"/>
+    <rect x="318" y="145" width="4" height="10" fill="#8B4513" rx="2"/>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+    <rect width="60" height="60" fill="#DDA0DD" rx="10"/>
+    <circle cx="30" cy="30" r="12" fill="#9370DB"/>
+    <text x="30" y="35" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">🙏</text>
+</svg>

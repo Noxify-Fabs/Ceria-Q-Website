@@ -1,0 +1,100 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="forestBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#98FB98;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#forestBg)" />
+  
+  <!-- Path -->
+  <path d="M 200 300 Q 200 200 180 100 Q 200 150 220 100 Q 200 200 200 300" 
+        fill="#D2691E" opacity="0.6" />
+  
+  <!-- Trees -->
+  <g id="bigTree">
+    <rect x="48" y="180" width="24" height="120" fill="#8B4513" />
+    <circle cx="60" cy="160" r="40" fill="#228B22" />
+    <circle cx="40" cy="180" r="30" fill="#32CD32" />
+    <circle cx="80" cy="180" r="30" fill="#32CD32" />
+  </g>
+  
+  <use href="#bigTree" x="280" y="0" />
+  
+  <!-- Small Trees -->
+  <g id="smallTree">
+    <rect x="148" y="220" width="12" height="80" fill="#8B4513" />
+    <circle cx="154" cy="210" r="20" fill="#228B22" />
+  </g>
+  
+  <use href="#smallTree" x="80" y="20" />
+  <use href="#smallTree" x="-50" y="30" />
+  
+  <!-- Rabbit (Kiki) -->
+  <g id="rabbit" transform="translate(150, 200)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="25" ry="30" fill="#F5F5DC" />
+    <!-- Head -->
+    <circle cx="0" cy="-25" r="18" fill="#F5F5DC" />
+    <!-- Ears -->
+    <ellipse cx="-8" cy="-40" rx="6" ry="15" fill="#F5F5DC" />
+    <ellipse cx="8" cy="-40" rx="6" ry="15" fill="#F5F5DC" />
+    <ellipse cx="-8" cy="-40" rx="3" ry="8" fill="#FFB6C1" />
+    <ellipse cx="8" cy="-40" rx="3" ry="8" fill="#FFB6C1" />
+    <!-- Eyes -->
+    <circle cx="-6" cy="-25" r="2" fill="#333" />
+    <circle cx="6" cy="-25" r="2" fill="#333" />
+    <!-- Nose -->
+    <circle cx="0" cy="-20" r="1.5" fill="#FF69B4" />
+    <!-- Tail -->
+    <circle cx="20" cy="5" r="8" fill="#F5F5DC" />
+  </g>
+  
+  <!-- Lion (Lala) -->
+  <g id="lion" transform="translate(220, 190)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="30" ry="25" fill="#DAA520" />
+    <!-- Mane -->
+    <circle cx="0" cy="-20" r="25" fill="#FF8C00" opacity="0.7" />
+    <!-- Head -->
+    <circle cx="0" cy="-20" r="15" fill="#DAA520" />
+    <!-- Ears -->
+    <circle cx="-10" cy="-30" r="5" fill="#DAA520" />
+    <circle cx="10" cy="-30" r="5" fill="#DAA520" />
+    <!-- Eyes -->
+    <circle cx="-5" cy="-20" r="2" fill="#333" />
+    <circle cx="5" cy="-20" r="2" fill="#333" />
+    <!-- Nose -->
+    <ellipse cx="0" cy="-15" rx="3" ry="2" fill="#333" />
+    <!-- Legs -->
+    <rect x="-15" y="15" width="8" height="15" fill="#DAA520" />
+    <rect x="-5" y="15" width="8" height="15" fill="#DAA520" />
+    <rect x="5" y="15" width="8" height="15" fill="#DAA520" />
+    <rect x="15" y="15" width="8" height="15" fill="#DAA520" />
+  </g>
+  
+  <!-- Backpacks -->
+  <rect x="135" y="195" width="8" height="10" fill="#4169E1" rx="1" />
+  <rect x="205" y="185" width="10" height="12" fill="#DC143C" rx="1" />
+  
+  <!-- Sun rays -->
+  <g opacity="0.6">
+    <line x1="350" y1="50" x2="350" y2="70" stroke="#FFD700" stroke-width="2" />
+    <line x1="350" y1="50" x2="365" y2="65" stroke="#FFD700" stroke-width="2" />
+    <line x1="350" y1="50" x2="335" y2="65" stroke="#FFD700" stroke-width="2" />
+    <line x1="350" y1="50" x2="370" y2="50" stroke="#FFD700" stroke-width="2" />
+    <line x1="350" y1="50" x2="330" y2="50" stroke="#FFD700" stroke-width="2" />
+  </g>
+  
+  <!-- Butterflies -->
+  <g id="butterfly" transform="translate(100, 80) scale(0.5)">
+    <ellipse cx="-10" cy="0" rx="8" ry="15" fill="#FF69B4" opacity="0.8" />
+    <ellipse cx="10" cy="0" rx="8" ry="15" fill="#FF69B4" opacity="0.8" />
+    <rect x="-2" y="-5" width="4" height="10" fill="#333" />
+  </g>
+  
+  <use href="#butterfly" x="200" y="-20" transform="scale(0.8)" />
+  <use href="#butterfly" x="50" y="40" transform="scale(0.6)" />
+</svg>

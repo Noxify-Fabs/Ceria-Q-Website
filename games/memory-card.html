@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card - Ubay dan Lala: Sahabat Surga</title>
+    <link rel="stylesheet" href="css/memory-card.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Header -->
+        <header class="game-header">
+            <button class="back-button" onclick="backToMenu()">
+                ← Kembali
+            </button>
+            <h1>Memory Card</h1>
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Level:</span>
+                    <span class="stat-value" id="currentLevel">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Langkah:</span>
+                    <span class="stat-value" id="moveCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Pasangan:</span>
+                    <span class="stat-value" id="pairCount">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Difficulty Selection Screen -->
+        <div class="screen" id="difficultyScreen">
+            <div class="difficulty-container">
+                <h2 class="screen-title">Pilih Tingkat Kesulitan</h2>
+                <div class="difficulty-grid">
+                    <div class="difficulty-card" onclick="startGame('mudah')">
+                        <div class="difficulty-icon">🌟</div>
+                        <h3 class="difficulty-title">MUDAH</h3>
+                        <p class="difficulty-desc">Grid 3×3<br>4 pasangan</p>
+                        <div class="difficulty-badge easy">Mudah</div>
+                    </div>
+                    
+                    <div class="difficulty-card" onclick="startGame('sedang')">
+                        <div class="difficulty-icon">⭐</div>
+                        <h3 class="difficulty-title">SEDANG</h3>
+                        <p class="difficulty-desc">Grid 4×4<br>8 pasangan</p>
+                        <div class="difficulty-badge medium">Sedang</div>
+                    </div>
+                    
+                    <div class="difficulty-card" onclick="startGame('sulit')">
+                        <div class="difficulty-icon">🌠</div>
+                        <h3 class="difficulty-title">SULIT</h3>
+                        <p class="difficulty-desc">Grid 5×5<br>12 pasangan</p>
+                        <div class="difficulty-badge hard">Sulit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div class="screen" id="gameScreen" style="display: none;">
+            <div class="game-board">
+                <div class="cards-grid" id="cardsGrid">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <button class="control-button" onclick="resetLevel()">🔄 Ulangi Level</button>
+                <button class="control-button" onclick="backToDifficulty()">📊 Ganti Level</button>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal" id="successModal">
+            <div class="modal-content">
+                <h2 class="modal-title">🎉 Hebat! Kamu Berhasil!</h2>
+                <div class="modal-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Level:</span>
+                        <span class="stat-value" id="completedLevel">-</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Total Langkah:</span>
+                        <span class="stat-value" id="finalMoves">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Pasangan Ditemukan:</span>
+                        <span class="stat-value" id="finalPairs">0</span>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button" onclick="resetLevel()">🔄 Main Lagi</button>
+                    <button class="modal-button" onclick="backToDifficulty()">📊 Ganti Level</button>
+                    <button class="modal-button" onclick="backToMenu()">🏠 Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reward Overlay -->
+    <div class="reward-overlay" id="rewardOverlay">
+        <div class="reward-container">
+            <div class="reward-success">
+                <h2 class="reward-title">🎉 Hebat! Kamu berhasil menyelesaikan tantangan!</h2>
+                <p class="reward-subtitle">Pilih maksimal 2 kartu untuk ditambahkan ke koleksimu</p>
+            </div>
+            
+            <div class="card-selection">
+                <div class="selection-instruction">Pilih maksimal 2 kartu</div>
+                <div class="reward-cards" id="rewardCards">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+            
+            <div class="reward-actions">
+                <button class="reward-button" id="confirmButton" onclick="confirmRewardSelection()" style="display: none;">
+                    Konfirmasi Pilihan
+                </button>
+                <button class="reward-button" onclick="closeReward()">
+                    Kembali ke Menu Game
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/reward-system.js"></script>
+    <script src="js/memory-card-data.js"></script>
+    <script src="js/memory-card-game.js"></script>
+    <script>
+        // Override the showSuccessModal function to show reward
+        const originalShowSuccessModal = window.showSuccessModal;
+        window.showSuccessModal = function() {
+            // Get current level and show appropriate reward
+            const currentLevel = document.getElementById('currentLevel').textContent.toLowerCase();
+            let difficulty = 'easy';
+            
+            if (currentLevel === 'sedang') difficulty = 'medium';
+            else if (currentLevel === 'sulit') difficulty = 'hard';
+            
+            // Show reward instead of success modal
+            setTimeout(() => {
+                showReward(difficulty);
+            }, 500);
+        };
+    </script>
+</body>
+</html>

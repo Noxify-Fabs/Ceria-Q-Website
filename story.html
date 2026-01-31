@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Cerita Anak Islam - Membaca</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-simple">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img
+                src="assets/images/logopkm.png"
+                alt="PKM Logo"
+                class="logo-image"
+                />
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Beranda</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Story Content -->
+    <main class="story-main">
+        <div class="container">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span id="current-page">Halaman 1</span>
+                    <span id="total-pages">dari 5</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Story Display -->
+            <div class="story-content">
+                <div class="story-illustration" id="story-illustration">
+                    <div class="illustration-placeholder">
+                        🕌🤲📖
+                    </div>
+                </div>
+                
+                <div class="story-text-container">
+                    <h2 class="story-title" id="story-title">Judul Cerita</h2>
+                    <div class="story-text" id="story-text">
+                        Teks cerita akan muncul di sini...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Media Controls -->
+            <div class="media-controls">
+                <button class="media-btn" id="audio-btn" onclick="toggleAudio()">
+                    <span class="media-icon">🎵</span>
+                    <span class="media-text">Audio</span>
+                </button>
+                <button class="media-btn" id="video-btn" onclick="toggleVideo()">
+                    <span class="media-icon">🎬</span>
+                    <span class="media-text">Video/Animasi</span>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <div class="navigation-controls">
+                <button class="nav-btn nav-btn-prev" id="prev-btn" onclick="previousPage()">
+                    <span class="nav-icon">⬅️</span>
+                    <span class="nav-text">Sebelumnya</span>
+                </button>
+                
+                <div class="page-indicator">
+                    <span id="page-number">1 / 5</span>
+                </div>
+                
+                <button class="nav-btn nav-btn-next" id="next-btn" onclick="nextPage()">
+                    <span class="nav-text">Selanjutnya</span>
+                    <span class="nav-icon">➡️</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Audio Modal -->
+    <div class="modal" id="audio-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🎵 Audio</h3>
+                <button class="modal-close" onclick="closeAudioModal()">✖️</button>
+            </div>
+            <div class="modal-body">
+                <audio id="audio-player" controls>
+                    <source src="" type="audio/mpeg">
+                    Browser tidak mendukung audio.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-section" id="video-section" style="display: none;">
+        <div class="container">
+            <div class="video-container">
+                <iframe id="video-player" src="" frameborder="0" allowfullscreen autoplay></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading">
+            <div class="loading-content">
+                <div class="loading-spinner">🕌</div>
+                <p>Sedang memuat pelajaran Islam...</p>
+            </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

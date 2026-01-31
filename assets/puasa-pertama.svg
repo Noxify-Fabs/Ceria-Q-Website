@@ -1,0 +1,44 @@
+<svg width="280" height="140" viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A1B9A;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGrad">
+      <stop offset="0%" style="stop-color:#FFF9C4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFEB3B;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="280" height="140" fill="url(#bgGrad)"/>
+  
+  <!-- Moon and stars -->
+  <g transform="translate(140, 70)">
+    <!-- Crescent moon -->
+    <path d="M -20,-25 C -10,-30 10,-30 20,-25 C 15,-15 15,-5 10,5 C 0,0 -10,0 -20,5 C -25,-5 -25,-15 -20,-25 Z" 
+          fill="url(#moonGrad)" stroke="#F57F17" stroke-width="1"/>
+    
+    <!-- Stars -->
+    <path d="M -40,-40 L -35,-35 L -30,-40 L -35,-45 Z" fill="#FFF" opacity="0.9"/>
+    <path d="M 40,-35 L 45,-30 L 50,-35 L 45,-40 Z" fill="#FFF" opacity="0.9"/>
+    <path d="M -35,40 L -30,45 L -25,40 L -30,35 Z" fill="#FFF" opacity="0.9"/>
+    <path d="M 45,35 L 50,40 L 55,35 L 50,30 Z" fill="#FFF" opacity="0.9"/>
+    <circle cx="-50" cy="0" r="2" fill="#FFF" opacity="0.8"/>
+    <circle cx="50" cy="-10" r="2" fill="#FFF" opacity="0.8"/>
+    <circle cx="0" cy="-45" r="2" fill="#FFF" opacity="0.8"/>
+    <circle cx="0" cy="40" r="2" fill="#FFF" opacity="0.8"/>
+    
+    <!-- Lala character (simple) -->
+    <circle cx="0" cy="0" r="12" fill="#FFB6C1" stroke="#FF69B4" stroke-width="2"/>
+    <circle cx="-4" cy="-2" r="1.5" fill="#000"/>
+    <circle cx="4" cy="-2" r="1.5" fill="#000"/>
+    <path d="M -4,3 Q 0,6 4,3" stroke="#000" stroke-width="1" fill="none"/>
+    <!-- Hijab -->
+    <path d="M -15,-10 Q 0,-20 15,-10 L 12,-5 L -12,-5 Z" fill="#E91E63" stroke="#C2185B" stroke-width="1"/>
+  </g>
+  
+  <!-- Title text -->
+  <text x="140" y="125" text-anchor="middle" fill="#FFF" font-family="Fredoka" font-size="14" font-weight="600">Puasa Pertama Lala</text>
+</svg>

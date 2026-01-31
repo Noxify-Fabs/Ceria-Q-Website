@@ -1,0 +1,476 @@
+/**
+ * Card Collection Page Styles
+ * Child-friendly, colorful, and responsive design
+ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Container */
+.collection-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Header */
+.collection-header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.collection-header h1 {
+    font-size: 2.5em;
+    color: #5a67d8;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-info {
+    font-size: 1.3em;
+    color: #4a5568;
+    font-weight: bold;
+}
+
+.collected-count {
+    color: #48bb78;
+    font-size: 1.2em;
+}
+
+.separator {
+    margin: 0 8px;
+    color: #718096;
+}
+
+.total-count {
+    color: #ed8936;
+}
+
+.label {
+    color: #718096;
+    margin-left: 8px;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tab:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tab.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Loading and Messages */
+.loading-message {
+    text-align: center;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    font-size: 1.2em;
+    color: #4a5568;
+}
+
+.no-cards-message {
+    text-align: center;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.no-cards-message h2 {
+    color: #5a67d8;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.no-cards-message p {
+    color: #718096;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.action-button {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card.unlocked {
+    border: 3px solid #48bb78;
+}
+
+.card.locked {
+    border: 3px solid #cbd5e0;
+    opacity: 0.8;
+}
+
+.card-image {
+    height: 200px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.locked-placeholder {
+    font-size: 4em;
+    color: #a0aec0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #2d3748;
+}
+
+.card-info p {
+    color: #718096;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-button {
+    color: #718096;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #2d3748;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-image {
+    height: 300px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-info {
+    padding: 30px;
+}
+
+.modal-info h2 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.modal-info p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.modal-meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.card-type, .card-source {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Tooltip */
+.tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(45, 55, 72, 0.95);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Error and Empty States */
+.error-message, .no-cards-in-category {
+    text-align: center;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    grid-column: 1 / -1;
+}
+
+.error-message p, .no-cards-in-category p {
+    color: #e53e3e;
+    font-size: 1.1em;
+}
+
+.no-cards-in-category p {
+    color: #718096;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .collection-container {
+        padding: 15px;
+    }
+    
+    .collection-header h1 {
+        font-size: 2em;
+    }
+    
+    .progress-info {
+        font-size: 1.1em;
+    }
+    
+    .filter-tabs {
+        gap: 8px;
+    }
+    
+    .tab {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-image {
+        height: 250px;
+    }
+    
+    .modal-info {
+        padding: 20px;
+    }
+    
+    .modal-info h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .collection-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .card-image {
+        height: 150px;
+    }
+    
+    .card-info {
+        padding: 15px;
+    }
+    
+    .card-info h3 {
+        font-size: 1.1em;
+    }
+    
+    .card-info p {
+        font-size: 0.85em;
+    }
+    
+    .modal-image {
+        height: 200px;
+    }
+    
+    .modal-info {
+        padding: 15px;
+    }
+    
+    .modal-info h2 {
+        font-size: 1.3em;
+    }
+    
+    .modal-info p {
+        font-size: 1em;
+    }
+}
+
+/* Accessibility */
+.card:focus, .tab:focus, .action-button:focus, .close-button:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .collection-container {
+        max-width: none;
+        padding: 0;
+    }
+    
+    .filter-tabs, .modal {
+        display: none;
+    }
+    
+    .card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #e2e8f0;
+    }
+}

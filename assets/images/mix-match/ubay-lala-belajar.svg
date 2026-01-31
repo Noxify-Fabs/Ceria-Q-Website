@@ -1,0 +1,55 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - Soft gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F4FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F8FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4169E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5F9EA0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" fill="url(#bgGradient)" rx="20"/>
+  
+  <!-- Learning Scene -->
+  <!-- Book -->
+  <rect x="60" y="80" width="80" height="60" fill="url(#bookGradient)" rx="5"/>
+  <rect x="65" y="85" width="70" height="50" fill="white" rx="3"/>
+  
+  <!-- Book lines -->
+  <line x1="70" y1="95" x2="130" y2="95" stroke="#4169E1" stroke-width="2"/>
+  <line x1="70" y1="105" x2="130" y2="105" stroke="#4169E1" stroke-width="2"/>
+  <line x1="70" y1="115" x2="130" y2="115" stroke="#4169E1" stroke-width="2"/>
+  <line x1="70" y1="125" x2="120" y2="125" stroke="#4169E1" stroke-width="2"/>
+  
+  <!-- Ubay character (simplified) -->
+  <circle cx="50" cy="100" r="15" fill="#FDBCB4"/>
+  <path d="M35 95 Q50 90 65 95 Q60 92 50 90 Q40 92 35 95" fill="#8B4513"/>
+  <circle cx="45" cy="98" r="1.5" fill="black"/>
+  <circle cx="55" cy="98" r="1.5" fill="black"/>
+  <path d="M45 103 Q50 106 55 103" stroke="black" stroke-width="1" fill="none"/>
+  
+  <!-- Lala character (simplified) -->
+  <circle cx="150" cy="100" r="15" fill="#FDBCB4"/>
+  <path d="M135 95 Q150 90 165 95 Q165 102 160 105 L140 105 Q135 102 135 95" fill="#8B4513"/>
+  <circle cx="145" cy="98" r="1.5" fill="black"/>
+  <circle cx="155" cy="98" r="1.5" fill="black"/>
+  <path d="M145 103 Q150 106 155 103" stroke="black" stroke-width="1" fill="none"/>
+  
+  <!-- Learning elements -->
+  <circle cx="100" cy="40" r="8" fill="#FFD700" opacity="0.8"/>
+  <text x="100" y="45" text-anchor="middle" fill="white" font-size="10" font-weight="bold">✨</text>
+  
+  <!-- Sparkles around -->
+  <circle cx="30" cy="50" r="3" fill="#FFB6C1" opacity="0.6"/>
+  <circle cx="170" cy="60" r="3" fill="#98D8C8" opacity="0.6"/>
+  <circle cx="40" cy="160" r="3" fill="#FFB6C1" opacity="0.6"/>
+  <circle cx="160" cy="170" r="3" fill="#98D8C8" opacity="0.6"/>
+  
+  <!-- Title -->
+  <text x="100" y="180" text-anchor="middle" fill="#4A90A4" font-size="12" font-weight="bold">Belajar Bersama</text>
+</svg>

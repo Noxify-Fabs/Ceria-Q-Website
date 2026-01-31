@@ -1,0 +1,144 @@
+{
+  "cards": [
+    {
+      "id": "card-001",
+      "name": "Ubay",
+      "type": "character",
+      "image": "assets/images/cards/ubay.png",
+      "thumbnail": "assets/images/cards/ubay-thumb.png",
+      "description": "Sahabat baik yang suka menolong dan selalu berbuat kebaikan",
+      "source": "episode-1",
+      "rarity": "common",
+      "unlockCondition": {
+        "type": "story",
+        "id": "episode-1"
+      }
+    },
+    {
+      "id": "card-002",
+      "name": "Lala",
+      "type": "character",
+      "image": "assets/images/cards/lala.png",
+      "thumbnail": "assets/images/cards/lala-thumb.png",
+      "description": "Teman setia yang ceria dan suka berbagi dengan teman-temannya",
+      "source": "episode-1",
+      "rarity": "common",
+      "unlockCondition": {
+        "type": "story",
+        "id": "episode-1"
+      }
+    },
+    {
+      "id": "card-003",
+      "name": "Taman Bermain",
+      "type": "scene",
+      "image": "assets/images/cards/taman-bermain.png",
+      "thumbnail": "assets/images/cards/taman-bermain-thumb.png",
+      "description": "Tempat Ubay dan Lala bermain dan belajar bersama teman-teman",
+      "source": "episode-2",
+      "rarity": "common",
+      "unlockCondition": {
+        "type": "game",
+        "id": "picture-puzzle-ep2"
+      }
+    },
+    {
+      "id": "card-004",
+      "name": "Kebaikan Membawa Kebahagiaan",
+      "type": "quote",
+      "image": "assets/images/cards/quote-kebaikan.png",
+      "thumbnail": "assets/images/cards/quote-kebaikan-thumb.png",
+      "description": "Setiap kebaikan yang kita lakukan akan membawa kebahagiaan untuk semua",
+      "source": "episode-1",
+      "rarity": "special",
+      "unlockCondition": {
+        "type": "game",
+        "id": "story-quiz-ep1"
+      }
+    },
+    {
+      "id": "card-005",
+      "name": "Puzzle Master",
+      "type": "character",
+      "image": "assets/images/cards/puzzle-master.png",
+      "thumbnail": "assets/images/cards/puzzle-master-thumb.png",
+      "description": "Ahli puzzle yang bisa menyusun gambar dengan cepat dan tepat",
+      "source": "episode-1",
+      "rarity": "rare",
+      "unlockCondition": {
+        "type": "game",
+        "id": "puzzle-mudah"
+      }
+    },
+    {
+      "id": "card-006",
+      "name": "Taman Puzzle",
+      "type": "scene",
+      "image": "assets/images/cards/taman-puzzle.png",
+      "thumbnail": "assets/images/cards/taman-puzzle-thumb.png",
+      "description": "Tempat yang indah untuk bermain puzzle bersama teman-teman",
+      "source": "episode-1",
+      "rarity": "common",
+      "unlockCondition": {
+        "type": "game",
+        "id": "puzzle-sedang"
+      }
+    },
+    {
+      "id": "card-007",
+      "name": "Kesabaran adalah Kunci",
+      "type": "quote",
+      "image": "assets/images/cards/quote-kesabaran.png",
+      "thumbnail": "assets/images/cards/quote-kesabaran-thumb.png",
+      "description": "Dengan kesabaran, puzzle tersulit pun bisa diselesaikan",
+      "source": "episode-1",
+      "rarity": "special",
+      "unlockCondition": {
+        "type": "game",
+        "id": "puzzle-sulit"
+      }
+    },
+    {
+      "id": "card-008",
+      "name": "Memory Master",
+      "type": "character",
+      "image": "assets/images/cards/memory-master.png",
+      "thumbnail": "assets/images/cards/memory-master-thumb.png",
+      "description": "Ahli memori yang bisa mengingat semua pasangan dengan cepat",
+      "source": "episode-1",
+      "rarity": "common",
+      "unlockCondition": {
+        "type": "game",
+        "id": "mix-match-mudah"
+      }
+    },
+    {
+      "id": "card-009",
+      "name": "Taman Belajar",
+      "type": "scene",
+      "image": "assets/images/cards/taman-belajar.png",
+      "thumbnail": "assets/images/cards/taman-belajar-thumb.png",
+      "description": "Tempat yang indah untuk belajar dan bermain bersama",
+      "source": "episode-1",
+      "rarity": "common",
+      "unlockCondition": {
+        "type": "game",
+        "id": "mix-match-sedang"
+      }
+    },
+    {
+      "id": "card-010",
+      "name": "Kebaikan Mencerahkan",
+      "type": "quote",
+      "image": "assets/images/cards/quote-kebaikan-mencerahkan.png",
+      "thumbnail": "assets/images/cards/quote-kebaikan-mencerahkan-thumb.png",
+      "description": "Setiap kebaikan yang kita lakukan akan mencerahkan hari orang lain",
+      "source": "episode-1",
+      "rarity": "special",
+      "unlockCondition": {
+        "type": "game",
+        "id": "mix-match-sulit"
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <rect width="80" height="80" fill="#8B4513" rx="15"/>
+    <rect x="20" y="25" width="40" height="30" fill="#D2691E" rx="3"/>
+    <rect x="25" y="30" width="30" height="20" fill="#FFFFFF" rx="2"/>
+    <rect x="30" y="35" width="20" height="10" fill="#4169E1" rx="1"/>
+    <text x="40" y="42" text-anchor="middle" fill="#FFFFFF" font-size="8" font-weight="bold">ABC</text>
+</svg>

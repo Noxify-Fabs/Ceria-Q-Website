@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buku Cerita Anak Islam - Petualangan Akhlak Mulia</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img
+            src="assets/images/logopkm.png"
+            alt="PKM Logo"
+            class="logo-image"
+          />
+        </div>
+        <div class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link">Beranda</a>
+          <a href="#about" class="nav-link">Tentang</a>
+          <a href="#stories" class="nav-link">Cerita</a>
+          <a href="#main-game" class="nav-link">Minigame</a>
+          <a href="#collection" class="nav-link">Koleksi Kartu</a>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="title-ubay">UBAY</span
+              ><span class="title-ampersand">&</span
+              ><span class="title-lala">LALA</span><br />
+              <span class="title-subtitle">Sahabat Surga</span>
+            </h1>
+            <p class="hero-subtitle">
+              Mari bergabung dengan Ubay dan Lala dalam petualangan menanamkan
+              nilai-nilai Islam!
+            </p>
+            <div class="hero-buttons">
+              <a href="#stories" class="btn btn-primary"> Mulai Membaca </a>
+              <a href="#about" class="btn btn-secondary">
+                Tentang Nilai Islam
+              </a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-illustration">
+              <img
+                src="assets/images/char-2.png"
+                alt="PKM Character"
+                class="hero-character"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">Tentang Buku Cerita Ini</h2>
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-icon">📚</div>
+            <h3>Kisah Inspiratif</h3>
+            <p>
+              Temukan kisah inspiratif bersama Ubay dan Lala yang penuh hikmah
+              Islam dan nilai-nilai mulia.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">🎬</div>
+            <h3>Audio & Video Animasi</h3>
+            <p>
+              Nikmati cerita dengan audio doa dan video animasi yang menarik
+              untuk anak-anak.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">🕋</div>
+            <h3>Nilai-nilai Islam</h3>
+            <p>
+              Ilustrasi islami yang menanamkan kecintaan pada Al-Qur'an dan
+              Sunnah sejak dini.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="stories">
+      <div class="container">
+        <h2 class="section-title">Pilih Cerita Islam</h2>
+        <div class="stories-grid">
+          <div class="story-card" onclick="openStory(1)">
+            <div class="story-card-image">
+              <img src="assets/uang-jajan.svg" alt="Uang Jajanku Jadi Pahala" class="story-thumbnail" />
+              <div class="story-emoji">💰</div>
+            </div>
+            <div class="story-card-content">
+              <h3>Uang Jajanku Jadi Pahala!</h3>
+              <p>Belajar mengelola uang jajan dengan bijak dan berbagi</p>
+              <div class="story-meta">
+                <span>📄 11 Halaman</span>
+                <span>⏱ 18 menit</span>
+              </div>
+            </div>
+            <div class="story-card-arrow">➡️</div>
+          </div>
+
+          <div class="story-card" onclick="openStory(2)">
+            <div class="story-card-image">
+              <img src="assets/puasa-pertama.svg" alt="Hebatnya Puasa Pertama Lala" class="story-thumbnail" />
+              <div class="story-emoji">🌙</div>
+            </div>
+            <div class="story-card-content">
+              <h3>Hebatnya Puasa Pertama Lala</h3>
+              <p>Pengalaman seru Lala saat puasa pertama kali</p>
+              <div class="story-meta">
+                <span>📄 10 Halaman</span>
+                <span>⏱ 17 menit</span>
+              </div>
+            </div>
+            <div class="story-card-arrow">➡️</div>
+          </div>
+
+          <div class="story-card" onclick="openStory(3)">
+            <div class="story-card-image">
+              <img src="assets/dzikir-brave.svg" alt="Wushhh! Dzikir Bikin Takut Jadi Berani" class="story-thumbnail" />
+              <div class="story-emoji">💪</div>
+            </div>
+            <div class="story-card-content">
+              <h3>Wushhh! Dzikir Bikin Takut Jadi Berani</h3>
+              <p>Kekuatan dzikir untuk menghilangkan rasa takut</p>
+              <div class="story-meta">
+                <span>📄 11 Halaman</span>
+                <span>⏱ 14 menit</span>
+              </div>
+            </div>
+            <div class="story-card-arrow">➡️</div>
+          </div>
+
+          <div class="story-card" onclick="openStory(4)">
+            <div class="story-card-image">
+              <img src="assets/bersyukur.svg" alt="Ubay Belajar Bersyukur dari Hal Kecil" class="story-thumbnail" />
+              <div class="story-emoji">🙏</div>
+            </div>
+            <div class="story-card-content">
+              <h3>Ubay Belajar Bersyukur dari Hal Kecil</h3>
+              <p>Mengajarkan pentingnya bersyukur dalam kehidupan sehari-hari</p>
+              <div class="story-meta">
+                <span>📄 11 Halaman</span>
+                <span>⏱ 15 menit</span>
+              </div>
+            </div>
+            <div class="story-card-arrow">➡️</div>
+          </div>
+
+          <div class="story-card" onclick="openStory(5)">
+            <div class="story-card-image">
+              <img src="assets/kotak-pensil.svg" alt="Ubay dan Kotak Pensil Kejujuran" class="story-thumbnail" />
+              <div class="story-emoji">✏️</div>
+            </div>
+            <div class="story-card-content">
+              <h3>Ubay dan Kotak Pensil Kejujuran</h3>
+              <p>Kisah tentang kejujuran yang berawal dari kotak pensil</p>
+              <div class="story-meta">
+                <span>📄 11 Halaman</span>
+                <span>⏱ 15 menit</span>
+              </div>
+            </div>
+            <div class="story-card-arrow">➡️</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Game Section -->
+    <section id="main-game" class="main-game">
+      <div class="container">
+        <h2 class="section-title">Main Game</h2>
+        <p class="section-subtitle">Ayo bermain dan belajar bersama Ubay & Lala! Seru dan menyenangkan!</p>
+        
+        <div class="game-grid">
+          <div class="game-card">
+            <div class="game-icon">
+              <img src="assets/images/puzzle/puzzle-ubay-lala-1.svg" alt="Memory Card" class="game-illustration" />
+            </div>
+            <h3 class="game-title">Memory Card</h3>
+            <span class="game-status">Tersedia</span>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-icon">
+              <img src="assets/images/mix-match/ubay-lala-belajar.svg" alt="Mix & Match" class="game-illustration" />
+            </div>
+            <h3 class="game-title">Mix & Match</h3>
+            <span class="game-status">Tersedia</span>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-icon">
+              <img src="assets/images/story-illustration-1.svg" alt="Story Quiz" class="game-illustration" />
+            </div>
+            <h3 class="game-title">Story Quiz</h3>
+            <span class="game-status">Tersedia</span>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-icon">
+              <img src="assets/images/puzzle/puzzle-ubay-lala-2.svg" alt="Puzzle Bergambar" class="game-illustration" />
+            </div>
+            <h3 class="game-title">Puzzle Bergambar</h3>
+            <span class="game-status">Tersedia</span>
+          </div>
+        </div>
+        
+        <div class="main-game-action">
+          <button class="main-game-button" onclick="window.location.href='games/index.html'">
+            Masuk Menu Game
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Collection Section -->
+    <section id="collection" class="collection">
+      <div class="container">
+        <h2 class="section-title">Koleksi Kartu</h2>
+        <p class="section-subtitle">Kumpulkan kartu langka dan jadilah kolektor terbaik bersama Ubay & Lala!</p>
+        
+        <div class="collection-preview-card">
+          <div class="collection-header">
+            <div class="collection-icon">
+              <img src="assets/images/char-pkm.png" alt="Collection Icon" class="collection-illustration" />
+            </div>
+            <div class="collection-title-section">
+              <h3 class="collection-card-title">Koleksi Kartu Spesial</h3>
+              <p class="collection-subtitle">44 kartu menanti untuk dikumpulkan!</p>
+            </div>
+          </div>
+          
+          <div class="collection-progress-section">
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill" id="homeProgressFill" style="width: 0%">
+                  <span id="homeProgressPercent">0%</span>
+                </div>
+              </div>
+              <div class="progress-text" id="homeProgressText">0 dari 44 kartu</div>
+            </div>
+          </div>
+          
+          <div class="collection-description">
+            <p>Kumpulkan kartu karakter, lokasi, dan item istimewa dari cerita Ubay dan Lala!</p>
+          </div>
+          
+          <div class="rarity-preview">
+            <h4 class="rarity-title">Tingkat Kelangkaan:</h4>
+            <div class="rarity-badges">
+              <div class="rarity-badge r">R</div>
+              <div class="rarity-badge sr">SR</div>
+              <div class="rarity-badge ssr">SSR</div>
+              <div class="rarity-badge ssr-plus">SSR+</div>
+              <div class="rarity-badge ur">UR</div>
+            </div>
+          </div>
+          
+          <div class="collection-action">
+            <button class="collection-button" onclick="window.location.href='collection/index.html'">
+              Lihat Koleksi Kartu
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">Buku Cerita Anak Islam</div>
+            <p class="footer-description">
+              Platform edukasi Islam untuk anak-anak dengan cerita menarik dan
+              nilai-nilai akhlak mulia.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook">
+                <span class="social-icon">📘</span>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter">
+                <span class="social-icon">🐦</span>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <span class="social-icon">📷</span>
+              </a>
+              <a href="#" class="social-link" aria-label="YouTube">
+                <span class="social-icon">📺</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">Menu Cepat</h4>
+            <ul class="footer-links">
+              <li><a href="#home" class="footer-link">Beranda</a></li>
+              <li><a href="#about" class="footer-link">Tentang</a></li>
+              <li><a href="#stories" class="footer-link">Cerita</a></li>
+              <li><a href="#main-game" class="footer-link">Minigame</a></li>
+              <li><a href="#collection" class="footer-link">Koleksi Kartu</a></li>
+              <li><a href="#" class="footer-link">Kontak</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">Pelajaran</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Kejujuran</a></li>
+              <li><a href="#" class="footer-link">Kasih Sayang</a></li>
+              <li><a href="#" class="footer-link">Sabar</a></li>
+              <li><a href="#" class="footer-link">Peduli</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-title">Informasi</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Tentang PKM</a></li>
+              <li><a href="#" class="footer-link">Tim Pengembang</a></li>
+              <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+              <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <p>&copy; 2026 - Proyek PKM. All rights reserved.</p>
+            <p class="footer-credits">
+              Dikembangkan untuk pendidikan Islam anak Indonesia
+            </p>
+          </div>
+          <div class="footer-badges">
+            <span class="badge">PKM 2026</span>
+            <span class="badge">Edukasi Islam</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+    <!-- Reward System Script -->
+    <script src="js/reward-system.js"></script>
+    <script>
+        // Update collection progress on homepage
+        function updateHomepageProgress() {
+            const unlockedCards = JSON.parse(localStorage.getItem('unlockedCards') || '[]');
+            const totalCards = 44; // Total cards in database
+            const progress = (unlockedCards.length / totalCards) * 100;
+            
+            const progressFill = document.getElementById('homeProgressFill');
+            const progressPercent = document.getElementById('homeProgressPercent');
+            const progressText = document.getElementById('homeProgressText');
+            
+            if (progressFill) {
+                progressFill.style.width = `${progress}%`;
+            }
+            
+            if (progressPercent) {
+                progressPercent.textContent = `${Math.round(progress)}%`;
+            }
+            
+            if (progressText) {
+                progressText.textContent = `${unlockedCards.length} dari ${totalCards} kartu`;
+            }
+        }
+        
+        // Update progress when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            updateHomepageProgress();
+        });
+        
+        // Update progress when storage changes
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'unlockedCards') {
+                updateHomepageProgress();
+            }
+        });
+    </script>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-content">
+        <div class="loading-spinner">🕌</div>
+        <p>Loading...</p>
+      </div>
+    </div>
+  </body>
+</html>

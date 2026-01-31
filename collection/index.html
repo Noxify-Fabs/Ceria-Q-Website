@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Kartu - Ubay dan Lala: Sahabat Surga</title>
+    <link rel="stylesheet" href="../css/reward-system.css">
+</head>
+<body>
+    <div class="collection-container">
+        <!-- Header -->
+        <header class="collection-header">
+            <button class="back-button" onclick="history.back()">
+                ← Kembali
+            </button>
+            <h1 class="collection-title">Koleksi Kartu</h1>
+            
+            <!-- Progress Section -->
+            <div class="collection-progress">
+                <div class="progress-title">Progres Koleksi</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill">
+                        <span id="progressPercent">0%</span>
+                    </div>
+                </div>
+                <div class="progress-text" id="progressText">0 dari 44 kartu</div>
+            </div>
+        </header>
+
+        <!-- Filters -->
+        <div class="collection-filters">
+            <button class="filter-button active" onclick="filterCards('all')">Semua</button>
+            <button class="filter-button" onclick="filterCards('R')">R</button>
+            <button class="filter-button" onclick="filterCards('SR')">SR</button>
+            <button class="filter-button" onclick="filterCards('SSR')">SSR</button>
+            <button class="filter-button" onclick="filterCards('UR')">UR</button>
+        </div>
+
+        <!-- Rarity Sections -->
+        <div id="collectionContent">
+            <!-- R Section -->
+            <div class="rarity-section" data-rarity="R">
+                <div class="rarity-header">
+                    <div class="rarity-icon r">R</div>
+                    <div class="rarity-name">Rare</div>
+                    <div class="rarity-count">15 kartu</div>
+                </div>
+                <div class="collection-grid" id="r-grid">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+
+            <!-- SR Section -->
+            <div class="rarity-section" data-rarity="SR">
+                <div class="rarity-header">
+                    <div class="rarity-icon sr">SR</div>
+                    <div class="rarity-name">Super Rare</div>
+                    <div class="rarity-count">10 kartu</div>
+                </div>
+                <div class="collection-grid" id="sr-grid">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+
+            <!-- SSR Section -->
+            <div class="rarity-section" data-rarity="SSR">
+                <div class="rarity-header">
+                    <div class="rarity-icon ssr">SSR</div>
+                    <div class="rarity-name">Super Super Rare</div>
+                    <div class="rarity-count">8 kartu</div>
+                </div>
+                <div class="collection-grid" id="ssr-grid">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+
+            <!-- SSR+ Section -->
+            <div class="rarity-section" data-rarity="SSR+">
+                <div class="rarity-header">
+                    <div class="rarity-icon ssr-plus">SSR+</div>
+                    <div class="rarity-name">Super Super Rare Plus</div>
+                    <div class="rarity-count">5 kartu</div>
+                </div>
+                <div class="collection-grid" id="ssr-plus-grid">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+
+            <!-- UR Section -->
+            <div class="rarity-section" data-rarity="UR">
+                <div class="rarity-header">
+                    <div class="rarity-icon ur">UR</div>
+                    <div class="rarity-name">Ultra Rare</div>
+                    <div class="rarity-count">3 kartu</div>
+                </div>
+                <div class="collection-grid" id="ur-grid">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/reward-system.js"></script>
+    <script>
+        // Collection Page Controller
+        class CollectionPage {
+            constructor() {
+                this.currentFilter = 'all';
+                this.unlockedCards = [];
+                this.init();
+            }
+
+            init() {
+                this.loadUnlockedCards();
+                this.renderAllCards();
+                this.updateProgress();
+            }
+
+            loadUnlockedCards() {
+                this.unlockedCards = JSON.parse(localStorage.getItem('unlockedCards') || '[]');
+            }
+
+            renderAllCards() {
+                const rarities = ['R', 'SR', 'SSR', 'SSR+', 'UR'];
+                
+                rarities.forEach(rarity => {
+                    const cards = cardDatabase[rarity] || [];
+                    const grid = document.getElementById(`${rarity.toLowerCase().replace('+', '-plus')}-grid`);
+                    
+                    if (grid) {
+                        grid.innerHTML = '';
+                        cards.forEach(card => {
+                            const cardElement = this.createCollectionCard(card, rarity);
+                            grid.appendChild(cardElement);
+                        });
+                    }
+                });
+            }
+
+            createCollectionCard(card, rarity) {
+                const isUnlocked = this.unlockedCards.includes(card.id);
+                const cardDiv = document.createElement('div');
+                cardDiv.className = `collection-card ${isUnlocked ? 'unlocked' : 'locked'} rarity-${rarity.toLowerCase()}`;
+                
+                if (isUnlocked) {
+                    cardDiv.innerHTML = `
+                        <div class="collection-card-image">${card.icon}</div>
+                        <div class="collection-card-name">${card.name}</div>
+                        <div class="collection-card-rarity ${rarity.toLowerCase()}">${rarity}</div>
+                    `;
+                } else {
+                    cardDiv.innerHTML = `
+                        <div class="collection-card-image">
+                            <div class="lock-icon">🔒</div>
+                        </div>
+                        <div class="collection-card-name">???</div>
+                        <div class="collection-card-rarity ${rarity.toLowerCase()}">${rarity}</div>
+                    `;
+                }
+                
+                return cardDiv;
+            }
+
+            updateProgress() {
+                const totalCards = this.getTotalCardCount();
+                const unlockedCount = this.unlockedCards.length;
+                const progress = (unlockedCount / totalCards) * 100;
+                
+                const progressFill = document.getElementById('progressFill');
+                const progressPercent = document.getElementById('progressPercent');
+                const progressText = document.getElementById('progressText');
+                
+                if (progressFill) {
+                    progressFill.style.width = `${progress}%`;
+                }
+                
+                if (progressPercent) {
+                    progressPercent.textContent = `${Math.round(progress)}%`;
+                }
+                
+                if (progressText) {
+                    progressText.textContent = `${unlockedCount} dari ${totalCards} kartu`;
+                }
+            }
+
+            getTotalCardCount() {
+                let total = 0;
+                Object.values(cardDatabase).forEach(rarityCards => {
+                    total += rarityCards.length;
+                });
+                return total;
+            }
+        }
+
+        // Filter function
+        function filterCards(rarity) {
+            // Update active button
+            document.querySelectorAll('.filter-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide sections
+            const sections = document.querySelectorAll('.rarity-section');
+            sections.forEach(section => {
+                if (rarity === 'all') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = section.dataset.rarity === rarity ? 'block' : 'none';
+                }
+            });
+        }
+
+        // Initialize collection page
+        document.addEventListener('DOMContentLoaded', () => {
+            new CollectionPage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix & Match - Ubay dan Lala: Sahabat Surga</title>
+    <link rel="stylesheet" href="css/mix-match.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Header -->
+        <header class="game-header">
+            <button class="back-button" onclick="backToMenu()">
+                ← Kembali
+            </button>
+            <h1>Mix & Match</h1>
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Pasangan:</span>
+                    <span class="stat-value" id="matchCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Langkah:</span>
+                    <span class="stat-value" id="moveCount">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Main Area -->
+        <main class="game-main">
+            <!-- Left Column - Images -->
+            <div class="column left-column" id="imageColumn">
+                <!-- Images will be generated here -->
+            </div>
+
+            <!-- Center - SVG Canvas for Lines -->
+            <div class="connection-area">
+                <svg id="connectionSvg" class="connection-svg">
+                    <!-- Connection lines will be drawn here -->
+                </svg>
+            </div>
+
+            <!-- Right Column - Texts -->
+            <div class="column right-column" id="textColumn">
+                <!-- Texts will be generated here -->
+            </div>
+        </main>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button class="control-button" onclick="resetGame()">🔄 Ulangi</button>
+            <button class="control-button" onclick="checkAnswers()">✓ Periksa</button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <h2 class="modal-title">🎉 Hebat! Semua Cocok!</h2>
+            <p class="modal-message">Kamu berhasil mencocokkan semua pasangan dengan <span id="finalMoves">0</span> langkah!</p>
+            <div class="modal-buttons">
+                <button class="modal-button" onclick="resetGame()">🔄 Ulangi</button>
+                <button class="modal-button" onclick="backToMenu()">🏠 Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reward Overlay -->
+    <div class="reward-overlay" id="rewardOverlay">
+        <div class="reward-container">
+            <div class="reward-success">
+                <h2 class="reward-title">🎉 Hebat! Kamu berhasil menyelesaikan tantangan!</h2>
+                <p class="reward-subtitle">Pilih maksimal 2 kartu untuk ditambahkan ke koleksimu</p>
+            </div>
+            
+            <div class="card-selection">
+                <div class="selection-instruction">Pilih maksimal 2 kartu</div>
+                <div class="reward-cards" id="rewardCards">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+            
+            <div class="reward-actions">
+                <button class="reward-button" id="confirmButton" onclick="confirmRewardSelection()" style="display: none;">
+                    Konfirmasi Pilihan
+                </button>
+                <button class="reward-button" onclick="closeReward()">
+                    Kembali ke Menu Game
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/reward-system.js"></script>
+    <script src="js/mix-match-data.js"></script>
+    <script src="js/mix-match-game.js"></script>
+    <script>
+        // Override the showCompletionScreen function to show reward
+        const originalShowCompletionScreen = window.showCompletionScreen;
+        window.showCompletionScreen = function() {
+            // Show reward instead of completion screen
+            setTimeout(() => {
+                showReward('medium'); // Mix & Match is medium difficulty
+            }, 500);
+        };
+    </script>
+</body>
+</html>

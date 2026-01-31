@@ -1,0 +1,100 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - Soft sky gradient -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#98D8C8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7FD8BE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="400" height="300" fill="url(#skyGradient)"/>
+  
+  <!-- Ground -->
+  <rect y="300" width="400" height="100" fill="url(#groundGradient)"/>
+  
+  <!-- Sun -->
+  <circle cx="320" cy="80" r="40" fill="#FFD700" opacity="0.8"/>
+  <circle cx="320" cy="80" r="35" fill="#FFA500" opacity="0.6"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="100" cy="60" rx="40" ry="20" fill="white" opacity="0.8"/>
+  <ellipse cx="130" cy="65" rx="35" ry="18" fill="white" opacity="0.8"/>
+  <ellipse cx="70" cy="65" rx="30" ry="15" fill="white" opacity="0.8"/>
+  
+  <ellipse cx="280" cy="120" rx="35" ry="18" fill="white" opacity="0.7"/>
+  <ellipse cx="310" cy="125" rx="30" ry="15" fill="white" opacity="0.7"/>
+  
+  <!-- Tree -->
+  <rect x="50" y="200" width="20" height="100" fill="#8B4513" rx="2"/>
+  <circle cx="60" cy="180" r="40" fill="#228B22" opacity="0.8"/>
+  <circle cx="45" cy="190" r="30" fill="#32CD32" opacity="0.7"/>
+  <circle cx="75" cy="190" r="30" fill="#32CD32" opacity="0.7"/>
+  
+  <!-- Flowers -->
+  <circle cx="150" cy="320" r="8" fill="#FFB6C1"/>
+  <circle cx="150" cy="320" r="3" fill="#FF69B4"/>
+  
+  <circle cx="200" cy="340" r="8" fill="#FFB6C1"/>
+  <circle cx="200" cy="340" r="3" fill="#FF69B4"/>
+  
+  <circle cx="250" cy="330" r="8" fill="#FFB6C1"/>
+  <circle cx="250" cy="330" r="3" fill="#FF69B4"/>
+  
+  <!-- Ubay - Boy character -->
+  <g id="ubay">
+    <!-- Body -->
+    <ellipse cx="180" cy="280" rx="25" ry="35" fill="#4169E1"/>
+    <!-- Head -->
+    <circle cx="180" cy="230" r="20" fill="#FDBCB4"/>
+    <!-- Hair -->
+    <path d="M160 220 Q180 210 200 220 Q195 215 180 213 Q165 215 160 220" fill="#8B4513"/>
+    <!-- Eyes -->
+    <circle cx="172" cy="228" r="2" fill="black"/>
+    <circle cx="188" cy="228" r="2" fill="black"/>
+    <!-- Smile -->
+    <path d="M172 235 Q180 240 188 235" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Arms -->
+    <rect x="155" y="265" width="8" height="25" fill="#FDBCB4" rx="4" transform="rotate(-20 159 277)"/>
+    <rect x="197" y="265" width="8" height="25" fill="#FDBCB4" rx="4" transform="rotate(20 201 277)"/>
+    <!-- Legs -->
+    <rect x="170" y="305" width="8" height="20" fill="#4169E1" rx="4"/>
+    <rect x="182" y="305" width="8" height="20" fill="#4169E1" rx="4"/>
+  </g>
+  
+  <!-- Lala - Girl character -->
+  <g id="lala">
+    <!-- Body -->
+    <ellipse cx="280" cy="280" rx="25" ry="35" fill="#FFB6C1"/>
+    <!-- Head -->
+    <circle cx="280" cy="230" r="20" fill="#FDBCB4"/>
+    <!-- Hair -->
+    <path d="M260 220 Q280 210 300 220 Q300 235 295 240 L265 240 Q260 235 260 220" fill="#8B4513"/>
+    <!-- Hair bow -->
+    <circle cx="275" cy="215" r="4" fill="#FF69B4"/>
+    <circle cx="285" cy="215" r="4" fill="#FF69B4"/>
+    <!-- Eyes -->
+    <circle cx="272" cy="228" r="2" fill="black"/>
+    <circle cx="288" cy="228" r="2" fill="black"/>
+    <!-- Smile -->
+    <path d="M272 235 Q280 240 288 235" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Arms -->
+    <rect x="255" y="265" width="8" height="25" fill="#FDBCB4" rx="4" transform="rotate(-15 259 277)"/>
+    <rect x="297" y="265" width="8" height="25" fill="#FDBCB4" rx="4" transform="rotate(15 301 277)"/>
+    <!-- Legs -->
+    <rect x="270" y="305" width="8" height="20" fill="#FFB6C1" rx="4"/>
+    <rect x="282" y="305" width="8" height="20" fill="#FFB6C1" rx="4"/>
+  </g>
+  
+  <!-- Butterfly -->
+  <g id="butterfly">
+    <ellipse cx="350" cy="200" rx="8" ry="15" fill="#FFB6C1" transform="rotate(20 350 200)"/>
+    <ellipse cx="350" cy="200" rx="8" ry="15" fill="#FFB6C1" transform="rotate(-20 350 200)"/>
+    <rect x="348" y="195" width="4" height="10" fill="#8B4513" rx="2"/>
+  </g>
+</svg>

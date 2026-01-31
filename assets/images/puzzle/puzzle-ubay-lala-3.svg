@@ -1,0 +1,164 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - Mosque/school scene -->
+  <defs>
+    <linearGradient id="mosqueSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="mosqueGround" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5DEB3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DEB887;stop-opacity:1" />
+    </linearGradient>
+    
+    <pattern id="mosquePattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#F5DEB3"/>
+      <circle cx="10" cy="10" r="2" fill="#D2691E" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="400" height="280" fill="url(#mosqueSky)"/>
+  
+  <!-- Ground -->
+  <rect y="280" width="400" height="120" fill="url(#mosqueGround)"/>
+  
+  <!-- Sun -->
+  <circle cx="320" cy="70" r="35" fill="#FFD700" opacity="0.8"/>
+  <circle cx="320" cy="70" r="30" fill="#FFA500" opacity="0.6"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="80" cy="50" rx="35" ry="18" fill="white" opacity="0.8"/>
+  <ellipse cx="110" cy="55" rx="30" ry="15" fill="white" opacity="0.8"/>
+  <ellipse cx="50" cy="55" rx="25" ry="12" fill="white" opacity="0.8"/>
+  
+  <!-- Mosque/School Building -->
+  <g id="mosque">
+    <!-- Main building -->
+    <rect x="100" y="180" width="200" height="100" fill="#F5DEB3" stroke="#D2691E" stroke-width="2"/>
+    <rect x="100" y="180" width="200" height="100" fill="url(#mosquePattern)" opacity="0.3"/>
+    
+    <!-- Dome -->
+    <ellipse cx="200" cy="180" rx="60" ry="40" fill="#4169E1"/>
+    <ellipse cx="200" cy="175" rx="55" ry="35" fill="#5F9EA0"/>
+    <circle cx="200" cy="160" r="8" fill="#FFD700"/>
+    
+    <!-- Minaret -->
+    <rect x="80" y="140" width="20" height="140" fill="#F5DEB3" stroke="#D2691E" stroke-width="1"/>
+    <rect x="80" y="140" width="20" height="140" fill="url(#mosquePattern)" opacity="0.3"/>
+    <ellipse cx="90" cy="140" rx="12" ry="8" fill="#4169E1"/>
+    <ellipse cx="90" cy="135" rx="10" ry="6" fill="#5F9EA0"/>
+    
+    <rect x="300" y="140" width="20" height="140" fill="#F5DEB3" stroke="#D2691E" stroke-width="1"/>
+    <rect x="300" y="140" width="20" height="140" fill="url(#mosquePattern)" opacity="0.3"/>
+    <ellipse cx="310" cy="140" rx="12" ry="8" fill="#4169E1"/>
+    <ellipse cx="310" cy="135" rx="10" ry="6" fill="#5F9EA0"/>
+    
+    <!-- Door -->
+    <rect x="180" y="220" width="40" height="60" fill="#8B4513" rx="20" ry="20"/>
+    <circle cx="210" cy="250" r="2" fill="#FFD700"/>
+    
+    <!-- Windows -->
+    <rect x="120" y="200" width="25" height="25" fill="#87CEEB" rx="5"/>
+    <rect x="255" y="200" width="25" height="25" fill="#87CEEB" rx="5"/>
+    
+    <!-- Window cross patterns -->
+    <rect x="132" y="200" width="1" height="25" fill="#4169E1"/>
+    <rect x="120" y="212" width="25" height="1" fill="#4169E1"/>
+    <rect x="267" y="200" width="1" height="25" fill="#4169E1"/>
+    <rect x="255" y="212" width="25" height="1" fill="#4169E1"/>
+  </g>
+  
+  <!-- Tree on left -->
+  <g id="left-tree">
+    <rect x="30" y="240" width="15" height="80" fill="#8B4513" rx="2"/>
+    <circle cx="37.5" cy="220" r="30" fill="#228B22" opacity="0.8"/>
+    <circle cx="25" cy="230" r="20" fill="#32CD32" opacity="0.7"/>
+    <circle cx="50" cy="230" r="20" fill="#32CD32" opacity="0.7"/>
+  </g>
+  
+  <!-- Tree on right -->
+  <g id="right-tree">
+    <rect x="355" y="240" width="15" height="80" fill="#8B4513" rx="2"/>
+    <circle cx="362.5" cy="220" r="30" fill="#228B22" opacity="0.8"/>
+    <circle cx="350" cy="230" r="20" fill="#32CD32" opacity="0.7"/>
+    <circle cx="375" cy="230" r="20" fill="#32CD32" opacity="0.7"/>
+  </g>
+  
+  <!-- Path -->
+  <rect x="170" y="280" width="60" height="120" fill="#D2691E" opacity="0.5"/>
+  <rect x="175" y="285" width="50" height="110" fill="#DEB887" opacity="0.7"/>
+  
+  <!-- Ubay reading book -->
+  <g id="ubay-reading">
+    <!-- Body sitting -->
+    <ellipse cx="140" cy="320" rx="20" ry="25" fill="#4169E1"/>
+    <!-- Head -->
+    <circle cx="140" cy="290" r="16" fill="#FDBCB4"/>
+    <!-- Hair -->
+    <path d="M124 283 Q140 277 156 283 Q152 280 140 278 Q128 280 124 283" fill="#8B4513"/>
+    <!-- Eyes focused on book -->
+    <circle cx="134" cy="287" r="1.5" fill="black"/>
+    <circle cx="146" cy="287" r="1.5" fill="black"/>
+    <!-- Concentrated expression -->
+    <path d="M134 293 Q140 295 146 293" stroke="black" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <!-- Book -->
+    <rect x="120" y="305" width="25" height="18" fill="#8B4513" transform="rotate(-10 132.5 314)"/>
+    <rect x="122" y="307" width="21" height="14" fill="#F5DEB3" transform="rotate(-10 132.5 314)"/>
+    <!-- Arms holding book -->
+    <rect x="120" y="310" width="6" height="15" fill="#FDBCB4" rx="3" transform="rotate(-20 123 317.5)"/>
+    <rect x="154" y="310" width="6" height="15" fill="#FDBCB4" rx="3" transform="rotate(20 157 317.5)"/>
+    <!-- Legs crossed -->
+    <rect x="135" y="340" width="6" height="15" fill="#4169E1" rx="3" transform="rotate(15 138 347.5)"/>
+    <rect x="139" y="340" width="6" height="15" fill="#4169E1" rx="3" transform="rotate(-15 142 347.5)"/>
+  </g>
+  
+  <!-- Lala with prayer beads -->
+  <g id="lala-praying">
+    <!-- Body sitting -->
+    <ellipse cx="260" cy="320" rx="20" ry="25" fill="#FFB6C1"/>
+    <!-- Head -->
+    <circle cx="260" cy="290" r="16" fill="#FDBCB4"/>
+    <!-- Hijab -->
+    <path d="M244 283 Q260 277 276 283 Q276 295 270 300 L250 300 Q244 295 244 283" fill="#4169E1"/>
+    <!-- Peaceful face -->
+    <circle cx="254" cy="287" r="1.5" fill="black"/>
+    <circle cx="266" cy="287" r="1.5" fill="black"/>
+    <path d="M254 293 Q260 296 266 293" stroke="black" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <!-- Prayer beads -->
+    <circle cx="245" cy="310" r="2" fill="#8B4513"/>
+    <circle cx="250" cy="312" r="2" fill="#8B4513"/>
+    <circle cx="255" cy="310" r="2" fill="#8B4513"/>
+    <circle cx="260" cy="308" r="2" fill="#8B4513"/>
+    <circle cx="265" cy="310" r="2" fill="#8B4513"/>
+    <circle cx="270" cy="312" r="2" fill="#8B4513"/>
+    <circle cx="275" cy="310" r="2" fill="#8B4513"/>
+    <!-- Hands in prayer -->
+    <ellipse cx="260" cy="315" rx="8" ry="12" fill="#FDBCB4" transform="rotate(10 260 315)"/>
+    <!-- Legs crossed -->
+    <rect x="255" y="340" width="6" height="15" fill="#FFB6C1" rx="3" transform="rotate(15 258 347.5)"/>
+    <rect x="259" y="340" width="6" height="15" fill="#FFB6C1" rx="3" transform="rotate(-15 262 347.5)"/>
+  </g>
+  
+  <!-- Flying birds -->
+  <g id="birds-flying">
+    <path d="M150 100 Q155 95 160 100" stroke="#4169E1" stroke-width="2" fill="none"/>
+    <path d="M160 100 Q165 95 170 100" stroke="#4169E1" stroke-width="2" fill="none"/>
+    
+    <path d="M200 80 Q205 75 210 80" stroke="#4169E1" stroke-width="2" fill="none"/>
+    <path d="M210 80 Q215 75 220 80" stroke="#4169E1" stroke-width="2" fill="none"/>
+    
+    <path d="M250 90 Q255 85 260 90" stroke="#4169E1" stroke-width="2" fill="none"/>
+    <path d="M260 90 Q265 85 270 90" stroke="#4169E1" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Flowers near path -->
+  <circle cx="160" cy="350" r="6" fill="#FFB6C1" opacity="0.8"/>
+  <circle cx="160" cy="350" r="2.5" fill="#FFD700"/>
+  
+  <circle cx="240" cy="360" r="6" fill="#FFB6C1" opacity="0.8"/>
+  <circle cx="240" cy="360" r="2.5" fill="#FFD700"/>
+  
+  <circle cx="180" cy="370" r="5" fill="#FFA07A" opacity="0.8"/>
+  <circle cx="180" cy="370" r="2" fill="#FFD700"/>
+</svg>
